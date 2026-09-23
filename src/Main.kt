@@ -1,14 +1,31 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
-    }
+    println("-MENU-")
+    println("1. Crear Usuario");
+    println("2. Listar Usuarios");
+    println("3. Filtrar Usuarios");
+    println("4. Filtrar Juegos");
+    println("5. Salir");
+
+    var menu = readln()
+
+    when (menu) {
+        in 1 ->crearUsuario()
+        in 2 ->
+        in 3 ->
+        in 4 ->
+        in 5 ->
+        else ->
+    } while (menu != 0)
+
 }
+
+fun crearUsuario() {
+    print("Introduce tu nombre de usuario: ")
+    val nombre: String = readLine()
+    val juegos: String? = readLine()
+}
+
+//DANIEL Y MIKEL
