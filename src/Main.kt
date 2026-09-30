@@ -1,16 +1,19 @@
+import kotlin.String
+import kotlin.collections.MutableList
+
+val usuarios: MutableList<String> = mutableListOf()
 
 fun main() {
 
 
-    var menu = readln()
-
     do {
-        MostrarMenu()
+        mostrarMenu()
+        var menu = readln()
         when (menu) {
             in "1" -> crearUsuario()
             in "2" -> listarUsuarios()
-            in "3" -> FiltrarUsuarios()
-            in "4" -> FiltrarJuegos()
+            in "3" -> filtrarUsuarios()
+            in "4" -> filtrarJuegos()
             in "0" -> "Saliendo"
             else -> "Holi"
         }
@@ -19,29 +22,42 @@ fun main() {
 
 fun crearUsuario() {
     print("Introduce tu nombre de usuario: ")
-    val nombre: String? = readLine()
+    var nombre: String = readln()
+    val juegos: MutableList<String> =  mutableListOf()
+    print("Introduce juegos del usuario (0 para salir): ")
     do {
-        var juegos: String? = readLine()
-        if (juegos != "0") {
-
-            juegos.add = juegos
+        var juego: String = readln()
+        if (juego != "0") {
+            juegos.add(juego)
         }
-    } while (juegos != "0")
+    } while (juego != "0")
+    Usuario(nombre,juegos)
+
+    usuarios.add(nombre)
 }
 
 fun listarUsuarios() {
+    println("Usuarios: ")
+    for(usuario in usuarios) {
+        println(usuario)
+    }
+}
+
+fun filtrarUsuarios() {
+    print("Introduce el nombre de usuario a filtrar:")
+    var nombre: String = readln()
+    for (usuario in usuarios) {
+        if (nombre == usuario) {
+
+        }
+    }
+}
+
+fun filtrarJuegos() {
 
 }
 
-fun FiltrarUsuarios() {
-
-}
-
-fun FiltrarJuegos() {
-
-}
-
-fun MostrarMenu(){
+fun mostrarMenu(){
     println("-MENU-")
     println("1. Crear Usuario");
     println("2. Listar Usuarios");
